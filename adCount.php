@@ -10,14 +10,14 @@ $sponsorId = $_POST['sponsorId'];
 $dateTime = date("Y-m-d H:i:s");
 
 //updating ad play count and last played in database
-$query = mysqli_query($con, "UPDATE sponsor_ads SET plays = plays + 1, last_played = '$dateTime', cost = plays * '$rate' WHERE ad_id = '$adId'");
-$query = mysqli_query($con, "UPDATE sponsors SET remaining_balance = remaining_balance - '$rate' WHERE sponsor_id = '$sponsorId'");
+$query = mysqli_query($con, "UPDATE ad SET plays = plays + 1, last_played = '$dateTime', amount = plays * '$rate' WHERE id = '$adId'");
+$query = mysqli_query($con, "UPDATE adverts SET remaining = remaining - '$rate' WHERE sponsor_id = '$sponsorId'");
 
 //if sponsor balance is depleted
-$query = mysqli_query($con, "SELECT remaining_balance FROM sponsors WHERE sponsor_id = '$sponsorId'");
+$query = mysqli_query($con, "SELECT remaining FROM adverts WHERE id = '$advertId'");
 $array = mysqli_fetch_assoc($query);
-$result = $array['remaining_balance'];
+$result = $array['remaining'];
 if($result <= 0) {
-  $query = mysqli_query($con, "UPDATE sponsor_ads SET statuss = 'Inactive' WHERE sponsor_id = '$sponsorId'");
+  $query = mysqli_query($con, "UPDATE ad SET status = '2' WHERE id = '$advertId'");
 }
 ?>
