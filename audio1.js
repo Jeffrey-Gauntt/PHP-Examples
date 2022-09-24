@@ -1,5 +1,5 @@
 //TO DO: how to make this greeting thing work right
-var greeting = [183];
+var greeting = ["an int"];
 
 
 
