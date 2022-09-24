@@ -1,8 +1,4 @@
-//TO DO: how to make this greeting thing work right
 var greeting = ["an int"];
-
-
-
 var currentPlaylist = [];
 var shufflePlaylist = [];
 var audioElement;
