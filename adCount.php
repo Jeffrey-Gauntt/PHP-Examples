@@ -2,11 +2,8 @@
 include ("../includes/config.php");
 
 $adId = $_POST['adId'];
-
 $rate = $_POST['rate'];
-
 $sponsorId = $_POST['sponsorId'];
-
 $dateTime = date("Y-m-d H:i:s");
 
 //updating ad play count and last played in database
