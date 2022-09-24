@@ -35,7 +35,7 @@ class newAddress {
   //insert address form into database
   private function insertNewAddress($username, $coin, $address, $userId) {
     $dateTime = date("Y-m-d H:i:s");
-    $result = mysqli_query($this->con, "INSERT INTO addresses VALUES ('', '$userId', '$username', '$coin', '$address', '$dateTime')");
+    $result = mysqli_query($this->con, "INSERT INTO address VALUES ('', '$userId', '$username', '$coin', '$address', '$dateTime')");
 
     return $result;//end of process
   }
